@@ -2,7 +2,9 @@
 title: "Hello R"
 author: "Fatima Tanvir"
 date: "Data 2401"
-output: html_document
+output: 
+  html_document: 
+    fig_height: 10
 ---
 
 MAKE SURE YOU READ AND FOLLOW **ALL** INSTRUCTIONS ON THE INSTRUCTION DOCUMENT. 
@@ -23,7 +25,7 @@ The datasaurus_dozen file has 1846 rows and 0 columns. It has 3 varaibles.
 
 First let's plot the data in the dino dataset:
 
-```{r plot-dino, fig.height=3, fig.width=6}
+```{r plot-dino, fig.height=5, fig.width=5}
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
@@ -41,7 +43,7 @@ dino_data %>%
 
 Let's plot the data in the star dataset:
 
-```{r plot-star}
+```{r plot-star, fig.height=5, fig.width=5}
 star_data <- datasaurus_dozen %>%
   filter(dataset == "star")
 ggplot(data = star_data, mapping = aes(x = x, y = y)) +
@@ -59,7 +61,7 @@ star_data %>%
 
 Let's plot the data in the circle dataset:
 
-```{r plot-circle}
+```{r plot-circle, fig.height=5, fig.width=5}
 circle_data <- datasaurus_dozen %>%
   filter(dataset == "circle")
 ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
@@ -78,7 +80,6 @@ star_data %>%
 ### Exercise 5
 
 Lastly, let's plot the data for all our datasets:
-
 
 ```{r}
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
